@@ -29,11 +29,11 @@ module "instances" {
   public_subnet_ids  = module.network.public_subnet_ids
   private_subnet_ids = module.network.private_subnet_ids
   ec2_sg_id          = module.security.ec2_security_group_id # Reference the ec2_sg_id from the network module
-  instance_count              =  2
-  ami                =  "ami-0fc5d935ebf8bc3bc"
-  instance_type      = "t2.micro"
-  key_name           =  "terraformproject" 
-  iam_instance_profile = "roleforec2codedeploy"
+  instance_count     =  2                                    # Replace with your desired  count
+  ami                =  "ami-0fc5d935ebf8bc3bc"              # Replace with your AMI ID
+  instance_type      = "t2.micro"                            # Replace with your  instance type
+  key_name           =  "terraformproject"                   # Replace with your  key name
+  iam_instance_profile = "roleforec2codedeploy"              # Replace with your default IAM instance profile
 }
 
 module "databases" {
@@ -41,7 +41,7 @@ module "databases" {
   vpc_id              = module.network.vpc_id
   private_subnet_ids  = module.network.private_subnet_ids
   rds_sg_id           = module.security.rds_security_group_id
-  aws_db_subnet_group    = "my-new-db-subnet-group-12"
+  aws_db_subnet_group    = "my-new-db-subnet-group-12"          # Replace with your aws_db_subnet_group
   allocated_storage             = 10
   db_identifier                = "rds-db"  
   db_name                      = "mydb"    
