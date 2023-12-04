@@ -48,11 +48,12 @@ module "databases" {
   engine_version               = "8.0.33"
   instance_class               = "db.t3.micro"
   manage_master_user_password  = true
-  parameter_group_name         = "default.mysql8.0.33"
+  parameter_group_name         = "default.mysql5.7"
   skip_final_snapshot          = true
   final_snapshot_identifier    = "rds-db-snapshot5"
   # Add other necessary arguments specific to the databases module
 }
+
 
 module "security" {
   source              = "./module/security"
