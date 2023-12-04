@@ -7,7 +7,7 @@ variable "ec2_sg_id" {
 
 variable "instance_count" {
   type    = number
-  default = 2  # Replace with your desired default count
+  default = ""  # Replace with your desired default count
 }
 
 variable "ami" {
