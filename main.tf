@@ -40,7 +40,7 @@ module "databases" {
   vpc_id              = module.network.vpc_id
   private_subnet_ids  = module.network.private_subnet_ids
   rds_sg_id           = module.security.rds_security_group_id
-  aws_db_subnet_group    = ""
+  aws_db_subnet_group    = "my-new-db-subnet-group-12"
   allocated_storage             = 10
   db_identifier                = "rds-db"  # Moved into module configuration
   db_name                      = "mydb"    # Moved into module configuration
