@@ -29,7 +29,7 @@ module "instances" {
   public_subnet_ids  = module.network.public_subnet_ids
   private_subnet_ids = module.network.private_subnet_ids
   ec2_sg_id          = module.security.ec2_security_group_id # Reference the ec2_sg_id from the network module
-  count              =  2
+  instance_count              =  2
   ami                =  "ami-0fc5d935ebf8bc3bc"
   instance_type      = "t2.micro"
   key_name           =  "terraformproject" 
