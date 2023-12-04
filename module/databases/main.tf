@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "example" {
-  name        = "my-new-db-subnet-group-12"
+  name        = var.aws_db_subnet_group
   description = "my-new-db-subnet-group-12"
   subnet_ids  = var.private_subnet_ids
 
