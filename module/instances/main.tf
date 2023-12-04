@@ -16,13 +16,13 @@ resource "aws_dynamodb_table" "terraform_lock" {
 
 
 resource "aws_instance" "example" {
-  count                = 2
-  ami                  = "ami-0fc5d935ebf8bc3bc"
-  instance_type        = "t2.micro"
+  count                = var.count
+  ami                  = var.ami
+  instance_type        = var.instance_type
   subnet_id            = element(var.public_subnet_ids, count.index)
   vpc_security_group_ids = [var.ec2_sg_id]
-  key_name ="terraformproject"      # replace your pem file here .
-  iam_instance_profile = "roleforec2codedeploy"
+  key_name               =  var.key_name    # replace your pem file here .
+  iam_instance_profile = var.iam_instance_profile
 
   user_data = <<-EOF
     #!/bin/bash
