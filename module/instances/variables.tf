@@ -4,6 +4,12 @@ variable "private_subnet_ids" {}
 variable "ec2_sg_id" {
   description = "Security Group ID for RDS"
 }
+
+variable "instance_count" {
+  type    = number
+  default = 2  # Replace with your desired default count
+}
+
 variable "ami" {
   type    = string
   default = ""  # Replace with your default AMI ID
