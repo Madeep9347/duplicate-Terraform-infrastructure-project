@@ -65,7 +65,7 @@ variable "final_snapshot_identifier" {
   type    = string
   
 }
-variable "" {
+variable "aws_db_subnet_group" {
   type    = string
   
 }
