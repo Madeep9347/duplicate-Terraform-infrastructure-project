@@ -14,15 +14,15 @@ resource "aws_dynamodb_table" "terraform_lock" {
   }
 }
 
-
 resource "aws_instance" "example" {
-  count                = var.count
+  count                = var.instance_count
   ami                  = var.ami
   instance_type        = var.instance_type
   subnet_id            = element(var.public_subnet_ids, count.index)
   vpc_security_group_ids = [var.ec2_sg_id]
-  key_name               =  var.key_name    # replace your pem file here .
+  key_name             = var.key_name
   iam_instance_profile = var.iam_instance_profile
+}
 
   user_data = <<-EOF
     #!/bin/bash
