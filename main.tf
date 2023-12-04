@@ -45,7 +45,7 @@ module "databases" {
   db_name                      = "mydb"    # Moved into module configuration
   db_engine                    = "mysql"   # Moved into module configuration
   db_username                  = "madhu"     # Moved into module configuration
-  engine_version               = "8.0.33"
+  engine_version               = "5.7"
   instance_class               = "db.t3.micro"
   manage_master_user_password  = true
   parameter_group_name         = "default.mysql5.7"
