@@ -40,6 +40,17 @@ module "databases" {
   vpc_id              = module.network.vpc_id
   private_subnet_ids  = module.network.private_subnet_ids
   rds_sg_id           = module.security.rds_security_group_id
+  allocated_storage             = 10
+  identifier                    = "rds-db"
+  db_name                       = "mydb"
+  engine                        = "mysql"
+  engine_version                = "5.7"
+  instance_class                = "db.t3.micro"
+  manage_master_user_password   = true
+  username                      = "foo"
+  parameter_group_name          = "default.mysql5.7"
+  skip_final_snapshot           = true  # Avoid creating a final snapshot during deletion
+  final_snapshot_identifier     = "rds-db-snapshot5"  # Provide a different identifier
   # Add other necessary arguments
 }
 module "security" {
