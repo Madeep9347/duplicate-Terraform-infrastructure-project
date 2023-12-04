@@ -65,5 +65,9 @@ variable "final_snapshot_identifier" {
   type    = string
   
 }
+variable "" {
+  type    = string
+  
+}
 
 # ... rest of the configuration
