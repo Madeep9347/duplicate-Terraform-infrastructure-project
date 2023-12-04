@@ -40,17 +40,17 @@ module "databases" {
   vpc_id              = module.network.vpc_id
   private_subnet_ids  = module.network.private_subnet_ids
   rds_sg_id           = module.security.rds_security_group_id
-  allocated_storage             = 20                                  # Custom default value for allocated_storage
-  identifier                    = "custom-rds-db"                     # Custom default value for identifier
-  db_name                       = "custom-mydb"                       # Custom default value for db_name
-  engine                        = "custom-mysql"                      # Custom default value for engine
-  engine_version                = "8.0.33"                            # Custom default value for engine_version
-  instance_class                = "db.t3.small"                       # Custom default value for instance_class
-  manage_master_user_password   = true                                # Custom default value for manage_master_user_password
-  username                      = "bar"                               # Custom default value for username
-  parameter_group_name          = "custom.mysql8.0.33"                # Custom default value for parameter_group_name
-  skip_final_snapshot           = false                               # Custom default value for skip_final_snapshot
-  final_snapshot_identifier     = "rds-db-snapshot5"                  # Custom default value for final_snapshot_identifier
+  allocated_storage             = 10
+  db_identifier                = "rds-db"  # Moved into module configuration
+  db_name                      = "mydb"    # Moved into module configuration
+  db_engine                    = "mysql"   # Moved into module configuration
+  db_username                  = "madhu"     # Moved into module configuration
+  engine_version               = "8.0.33"
+  instance_class               = "db.t3.micro"
+  manage_master_user_password  = true
+  parameter_group_name         = "default.mysql8.0.33"
+  skip_final_snapshot          = true
+  final_snapshot_identifier    = "rds-db-snapshot5"
   # Add other necessary arguments specific to the databases module
 }
 
