@@ -2,11 +2,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-
 resource "aws_dynamodb_table" "terraform_lock" {
-  name           = "terraform-lock"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "LockID"
+  name         = "terraform-lock"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "LockID"
 
   attribute {
     name = "LockID"
@@ -22,7 +21,6 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [var.ec2_sg_id]
   key_name             = var.key_name
   iam_instance_profile = var.iam_instance_profile
-}
 
   user_data = <<-EOF
     #!/bin/bash
@@ -45,7 +43,7 @@ resource "aws_instance" "example" {
     sudo apt-get install -y awscli
     # Install mysql
     sudo apt install mysql-client-core-8.0
-    EOF
+  EOF
 
   tags = {
     Name = "ExampleInstance-${count.index + 1}"
