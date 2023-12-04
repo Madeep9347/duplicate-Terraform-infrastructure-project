@@ -42,10 +42,10 @@ module "databases" {
   rds_sg_id           = module.security.rds_security_group_id
   aws_db_subnet_group    = "my-new-db-subnet-group-12"
   allocated_storage             = 10
-  db_identifier                = "rds-db"  # Moved into module configuration
-  db_name                      = "mydb"    # Moved into module configuration
-  db_engine                    = "mysql"   # Moved into module configuration
-  db_username                  = "madhu"     # Moved into module configuration
+  db_identifier                = "rds-db"  
+  db_name                      = "mydb"    
+  db_engine                    = "mysql"   
+  db_username                  = "madhu"
   engine_version               = "5.7"
   instance_class               = "db.t3.micro"
   manage_master_user_password  = true
